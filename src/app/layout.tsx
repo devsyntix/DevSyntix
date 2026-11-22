@@ -16,7 +16,7 @@ const inter = Inter({
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://dev-synitx.vercel.app";
+  "https://devsyntix.com";
 
 export const viewport: Viewport = {
   themeColor: "#000000",
@@ -36,6 +36,12 @@ export const metadata: Metadata = {
     "DevSyntix engineers high-performance custom software, scalable SaaS platforms, responsive web applications, and AI automation solutions. Turn your vision into tomorrow's digital product.",
   keywords: [
     "DevSyntix",
+    "devsyntix.com",
+    "DevSyntix software",
+    "DevSyntix software development",
+    "DevSyntix SaaS solutions",
+    "DevSyntix technology",
+    "DevSyntix official website",
     "Software Development",
     "SaaS Development",
     "Custom Software Solutions",

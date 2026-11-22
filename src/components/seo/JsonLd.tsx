@@ -4,7 +4,7 @@ import { siteConfig } from "@/config/site";
 export default function JsonLd() {
   const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-    "https://dev-synitx.vercel.app";
+    "https://devsyntix.com";
 
   const organizationSchema = {
     "@context": "https://schema.org",
