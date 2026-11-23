@@ -178,10 +178,10 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Apple Copyright Row */}
+        {/* Copyright Row */}
         <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-[11px] sm:text-xs text-[#86868b]">
           <p>&copy; {currentYear} DevSyntix. All Rights Reserved.</p>
-          <div className="flex items-center gap-4 sm:gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6">
             <a href="#" className="hover:text-white transition-colors">
               Privacy
             </a>
@@ -190,7 +190,10 @@ export default function Footer() {
               Terms
             </a>
             <span className="text-white/10">&bull;</span>
-            <span className="text-[#29d8ff]/80 font-mono">iOS 27 Spatial Theme Active</span>
+            <span className="inline-flex items-center gap-1.5 text-[#29d8ff] font-medium tracking-tight">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#30d158] shadow-[0_0_6px_#30d158]" />
+              <span>Software Development &bull; SaaS Solutions</span>
+            </span>
           </div>
         </div>
       </div>
