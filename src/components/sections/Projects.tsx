@@ -33,7 +33,7 @@ export default function Projects() {
       {/* Ambient background glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[350px] sm:h-[700px] w-[350px] sm:w-[700px] rounded-full bg-[#af52de]/10 blur-[100px] sm:blur-[180px]"
+        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[350px] sm:h-[700px] w-[350px] sm:w-[700px] rounded-full bg-[#af52de]/10 blur-[100px] sm:blur-[180px] ambient-float"
       />
 
       <div className="mx-auto max-w-7xl">

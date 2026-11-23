@@ -156,11 +156,12 @@ export default function Contact() {
     >
       {/* Background ambient lighting */}
       <div
-        className="pointer-events-none absolute -top-40 right-10 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] bg-[#0071e3]/10 rounded-full blur-[90px] sm:blur-[160px]"
+        className="pointer-events-none absolute -top-40 right-10 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] bg-[#0071e3]/10 rounded-full blur-[90px] sm:blur-[160px] ambient-float"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute -bottom-40 left-10 w-[300px] sm:w-[550px] h-[300px] sm:h-[550px] bg-[#af52de]/10 rounded-full blur-[90px] sm:blur-[160px]"
+        className="pointer-events-none absolute -bottom-40 left-10 w-[300px] sm:w-[550px] h-[300px] sm:h-[550px] bg-[#af52de]/10 rounded-full blur-[90px] sm:blur-[160px] ambient-float"
+        style={{ animationDelay: "3.5s" }}
         aria-hidden="true"
       />
 

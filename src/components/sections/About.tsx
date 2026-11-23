@@ -126,7 +126,7 @@ export default function About() {
       {/* Ambient background glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-10 -translate-x-1/2 h-[300px] sm:h-[500px] w-[300px] sm:w-[500px] rounded-full bg-[#af52de]/10 blur-[90px] sm:blur-[150px]"
+        className="pointer-events-none absolute left-1/2 top-10 -translate-x-1/2 h-[300px] sm:h-[500px] w-[300px] sm:w-[500px] rounded-full bg-[#af52de]/10 blur-[90px] sm:blur-[150px] ambient-float"
       />
 
       <div className="relative z-10 mx-auto max-w-6xl">

@@ -17,11 +17,11 @@ export default function WhyChooseUs() {
       {/* Background radial aura */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-40 top-20 -z-10 h-[300px] sm:h-[500px] w-[300px] sm:w-[500px] rounded-full bg-[#af52de]/10 blur-[90px] sm:blur-[150px]"
+        className="pointer-events-none absolute -left-40 top-20 -z-10 h-[300px] sm:h-[500px] w-[300px] sm:w-[500px] rounded-full bg-[#af52de]/10 blur-[90px] sm:blur-[150px] ambient-float"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-40 bottom-20 -z-10 h-[300px] sm:h-[500px] w-[300px] sm:w-[500px] rounded-full bg-[#0071e3]/10 blur-[90px] sm:blur-[150px]"
+        className="pointer-events-none absolute -right-40 bottom-20 -z-10 h-[300px] sm:h-[500px] w-[300px] sm:w-[500px] rounded-full bg-[#0071e3]/10 blur-[90px] sm:blur-[150px] ambient-float"
       />
 
       <div className="mx-auto max-w-7xl">

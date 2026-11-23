@@ -63,11 +63,12 @@ export default function TechStack() {
       {/* Ambient background blur */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-32 top-1/4 -z-10 h-[300px] sm:h-[500px] w-[300px] sm:w-[500px] rounded-full bg-[#0071e3]/10 blur-[90px] sm:blur-[150px]"
+        className="pointer-events-none absolute -right-32 top-1/4 -z-10 h-[300px] sm:h-[500px] w-[300px] sm:w-[500px] rounded-full bg-[#0071e3]/10 blur-[90px] sm:blur-[150px] ambient-float"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-32 bottom-1/4 -z-10 h-[300px] sm:h-[500px] w-[300px] sm:w-[500px] rounded-full bg-[#af52de]/10 blur-[90px] sm:blur-[150px]"
+        className="pointer-events-none absolute -left-32 bottom-1/4 -z-10 h-[300px] sm:h-[500px] w-[300px] sm:w-[500px] rounded-full bg-[#af52de]/10 blur-[90px] sm:blur-[150px] ambient-float"
+        style={{ animationDelay: "3s" }}
       />
 
       <div className="mx-auto max-w-7xl">

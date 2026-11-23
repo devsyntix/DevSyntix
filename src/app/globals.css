@@ -188,3 +188,21 @@ textarea::selection {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.35);
 }
+
+/* ── Scroll-Linked Ambient Glow Animation ── */
+@keyframes ambient-scroll-float {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.12;
+  }
+  50% {
+    transform: translate3d(0, -18px, 0) scale(1.06);
+    opacity: 0.18;
+  }
+}
+
+.ambient-float {
+  animation: ambient-scroll-float 10s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+

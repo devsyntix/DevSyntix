@@ -20,11 +20,12 @@ export default function FAQ() {
       {/* Ambient background glows */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-48 top-1/4 -z-10 h-[300px] sm:h-[500px] w-[300px] sm:w-[500px] rounded-full bg-[#af52de]/10 blur-[90px] sm:blur-[160px]"
+        className="pointer-events-none absolute -left-48 top-1/4 -z-10 h-[300px] sm:h-[500px] w-[300px] sm:w-[500px] rounded-full bg-[#af52de]/10 blur-[90px] sm:blur-[160px] ambient-float"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-48 bottom-1/4 -z-10 h-[300px] sm:h-[500px] w-[300px] sm:w-[500px] rounded-full bg-[#29d8ff]/10 blur-[90px] sm:blur-[160px]"
+        className="pointer-events-none absolute -right-48 bottom-1/4 -z-10 h-[300px] sm:h-[500px] w-[300px] sm:w-[500px] rounded-full bg-[#29d8ff]/10 blur-[90px] sm:blur-[160px] ambient-float"
+        style={{ animationDelay: "4s" }}
       />
 
       <div className="mx-auto max-w-4xl">

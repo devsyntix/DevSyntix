@@ -10,7 +10,7 @@ export default function Services() {
       {/* Ambient background glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[350px] sm:h-[650px] w-[350px] sm:w-[650px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-[#0071e3]/10 via-[#af52de]/10 to-transparent blur-[100px] sm:blur-[160px]"
+        className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[350px] sm:h-[650px] w-[350px] sm:w-[650px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-[#0071e3]/10 via-[#af52de]/10 to-transparent blur-[100px] sm:blur-[160px] ambient-float"
       />
 
       <div className="mx-auto max-w-7xl">

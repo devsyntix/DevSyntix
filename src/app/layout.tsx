@@ -6,6 +6,8 @@ import Footer from "@/components/layout/Footer";
 import CustomCursor from "@/components/ui/CustomCursor";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import JsonLd from "@/components/seo/JsonLd";
+import ScrollProgress from "@/components/ui/ScrollProgress";
+import ScrollControls from "@/components/ui/ScrollControls";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -134,6 +136,7 @@ export default function RootLayout({
       }}
     >
       <body className="min-h-screen bg-black text-[#f5f5f7] antialiased select-none flex flex-col font-sans">
+        <ScrollProgress />
         <JsonLd />
         <CustomCursor />
         <SmoothScroll>
@@ -141,6 +144,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
         </SmoothScroll>
+        <ScrollControls />
       </body>
     </html>
   );

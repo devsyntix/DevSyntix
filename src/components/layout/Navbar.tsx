@@ -16,12 +16,21 @@ const navLinks = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [scrollDirection, setScrollDirection] = useState<"up" | "down">("up");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 25);
+      const currentY = window.scrollY;
+      setScrolled(currentY > 25);
+
+      if (Math.abs(currentY - lastScrollY) > 6) {
+        setScrollDirection(currentY > lastScrollY && currentY > 90 ? "down" : "up");
+        lastScrollY = currentY;
+      }
 
       const sections = ["home", "about", "services", "technologies", "projects", "faq", "contact"];
       let current = "home";
@@ -67,8 +76,14 @@ export default function Navbar() {
 
   return (
     <>
-      {/* ── iOS 27 Floating Dynamic Island Bar ── */}
-      <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 sm:px-6 pt-4 pointer-events-none transition-all duration-300">
+      {/* ── iOS 27 Floating Dynamic Island Bar with Scroll-Direction Physics ── */}
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 flex justify-center px-4 sm:px-6 pt-4 pointer-events-none transition-all duration-300 ease-out ${
+          scrollDirection === "down" && !mobileMenuOpen
+            ? "-translate-y-2 opacity-95 scale-[0.99]"
+            : "translate-y-0 opacity-100 scale-100"
+        }`}
+      >
         <nav
           className={`pointer-events-auto flex items-center justify-between gap-3 sm:gap-6 px-4 py-2.5 sm:px-6 sm:py-3 rounded-full transition-all duration-500 max-w-5xl w-full ${
             scrolled
