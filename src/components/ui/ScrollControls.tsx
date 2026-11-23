@@ -65,10 +65,10 @@ export default function ScrollControls() {
 
   return (
     <div
-      className={`fixed bottom-5 right-4 sm:bottom-8 sm:right-8 z-40 transition-all duration-500 ease-out ${
-        scrolledDown || scrollProgress > 5
+      className={`fixed bottom-[74px] right-4 sm:bottom-[96px] sm:right-8 z-40 transition-all duration-400 ease-out ${
+        scrolledDown
           ? "opacity-100 translate-y-0 pointer-events-auto"
-          : "opacity-85 translate-y-0 pointer-events-auto"
+          : "opacity-0 translate-y-4 pointer-events-none"
       }`}
     >
       <button
