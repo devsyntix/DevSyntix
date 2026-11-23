@@ -6,8 +6,9 @@ import {
   XTwitterIcon,
   ThreadsIcon,
   LinkedInIcon,
+  WhatsAppIcon,
 } from "@/components/ui/SocialIcons";
-import { siteConfig } from "@/config/site";
+import { siteConfig, getWhatsAppUrl } from "@/config/site";
 
 const quickLinks = [
   { label: "Home", href: "#home" },
@@ -32,6 +33,11 @@ export default function Footer() {
   const currentYear = 2026;
 
   const socialList = [
+    {
+      name: "WhatsApp",
+      icon: WhatsAppIcon,
+      href: siteConfig.social.whatsapp,
+    },
     {
       name: "Instagram",
       icon: InstagramIcon,
@@ -163,6 +169,18 @@ export default function Footer() {
                   className="text-white hover:text-[#29d8ff] transition-colors truncate block"
                 >
                   {siteConfig.contact.email}
+                </a>
+              </div>
+              <div>
+                <span className="text-[10px] sm:text-xs text-white/40 block">WhatsApp</span>
+                <a
+                  href={getWhatsAppUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-[#25D366] transition-colors flex items-center gap-1.5"
+                >
+                  <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366]" />
+                  <span>{siteConfig.contact.whatsapp}</span>
                 </a>
               </div>
               <div>

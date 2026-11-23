@@ -25,9 +25,15 @@ export const siteConfig = {
   contact: {
     email: "info@devsyntix.com",
     phone: "+91 70665 44055",
+    whatsapp: "+91 70665 44055",
+    whatsappNumber: "917066544055",
+    defaultWhatsAppMessage:
+      "Hello DevSyntix! I visited your website and would like to discuss a project with your team.",
   },
 
   social: {
+    whatsapp:
+      "https://wa.me/917066544055?text=Hello%20DevSyntix!%20I%20visited%20your%20website%20and%20would%20like%20to%20discuss%20a%20project%20with%20your%20team.",
     instagram: "https://www.instagram.com/devsyntix_/",
     facebook: "https://www.facebook.com/profile.php?id=61596414960836",
     twitter: "https://x.com/DevSyntix",
@@ -237,3 +243,9 @@ export const siteConfig = {
 } as const;
 
 export type SiteConfig = typeof siteConfig;
+
+export function getWhatsAppUrl(message?: string): string {
+  const text = message?.trim() || siteConfig.contact.defaultWhatsAppMessage;
+  return `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(text)}`;
+}
+

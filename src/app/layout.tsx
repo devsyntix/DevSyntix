@@ -8,6 +8,7 @@ import SmoothScroll from "@/components/ui/SmoothScroll";
 import JsonLd from "@/components/seo/JsonLd";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import ScrollControls from "@/components/ui/ScrollControls";
+import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -145,6 +146,7 @@ export default function RootLayout({
           <Footer />
         </SmoothScroll>
         <ScrollControls />
+        <FloatingWhatsApp />
       </body>
     </html>
   );
