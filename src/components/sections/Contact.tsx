@@ -11,7 +11,7 @@ import {
   LinkedInIcon,
   WhatsAppIcon,
 } from "@/components/ui/SocialIcons";
-import { siteConfig, getWhatsAppUrl } from "@/config/site";
+import { siteConfig } from "@/config/site";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 interface FormData {
@@ -113,25 +113,6 @@ export default function Contact() {
     } finally {
       setIsSubmitting(false);
     }
-  };
-
-  const getDynamicWhatsAppUrl = () => {
-    if (formData.fullName || formData.message) {
-      const parts = [
-        `Hello DevSyntix! My name is ${formData.fullName || "a client"}${formData.company ? ` from ${formData.company}` : ""}.`,
-      ];
-      if (formData.message) {
-        parts.push(`Project Details: ${formData.message}`);
-      }
-      if (formData.phone) {
-        parts.push(`Phone: ${formData.phone}`);
-      }
-      if (formData.email) {
-        parts.push(`Email: ${formData.email}`);
-      }
-      return getWhatsAppUrl(parts.join("\n\n"));
-    }
-    return getWhatsAppUrl();
   };
 
   const socialList = [
@@ -371,38 +352,25 @@ export default function Contact() {
                     />
                   </div>
 
-                  {/* Action Buttons: Email Transmit & Direct WhatsApp */}
-                  <div className="flex flex-col sm:flex-row items-center gap-2.5 sm:gap-3">
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="apple-intelligence-glow ios-btn flex-1 w-full py-3 sm:py-3.5 px-5 sm:px-6 rounded-full font-semibold text-xs sm:text-sm tracking-tight text-white bg-gradient-to-r from-[#0071e3] via-[#5856d6] to-[#af52de] shadow-[0_10px_35px_rgba(41,216,255,0.3)] hover:opacity-95 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                          <span>Transmitting Specification...</span>
-                        </>
-                      ) : (
-                        <>
-                          <Sparkles className="w-3.5 h-3.5 text-[#29d8ff]" />
-                          <span>Send Message</span>
-                          <Send className="w-3.5 h-3.5 ml-1" />
-                        </>
-                      )}
-                    </button>
-
-                    <a
-                      href={getDynamicWhatsAppUrl()}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="ios-btn w-full sm:w-auto py-3 sm:py-3.5 px-5 sm:px-6 rounded-full font-semibold text-xs sm:text-sm tracking-tight text-white bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/40 hover:border-[#25D366]/70 shadow-[0_4px_20px_rgba(37,211,102,0.25)] transition-all flex items-center justify-center gap-2"
-                      title="Send directly via WhatsApp with predefined message"
-                    >
-                      <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
-                      <span>Chat on WhatsApp</span>
-                    </a>
-                  </div>
+                  {/* Submit Button */}
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="apple-intelligence-glow ios-btn w-full py-3 sm:py-4 px-5 sm:px-6 rounded-full font-semibold text-xs sm:text-sm tracking-tight text-white bg-gradient-to-r from-[#0071e3] via-[#5856d6] to-[#af52de] shadow-[0_10px_35px_rgba(41,216,255,0.3)] hover:opacity-95 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                        <span>Transmitting Specification...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Sparkles className="w-3.5 h-3.5 text-[#29d8ff]" />
+                        <span>Send Message</span>
+                        <Send className="w-3.5 h-3.5 ml-1" />
+                      </>
+                    )}
+                  </button>
                 </form>
               )}
             </div>
@@ -411,34 +379,6 @@ export default function Contact() {
           {/* Direct Details & Social Links (5 cols) */}
           <div className="lg:col-span-5 space-y-3 sm:space-y-6">
             <div className="space-y-2.5 sm:space-y-4">
-              {/* Direct WhatsApp Card */}
-              <a
-                href={getWhatsAppUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ios-glass-card group flex items-start gap-3 sm:gap-4 p-3.5 sm:p-6 rounded-xl sm:rounded-[28px] border border-[#25D366]/25 hover:border-[#25D366]/60 shadow-[0_4px_25px_rgba(37,211,102,0.12)] transition-all"
-              >
-                <div className="flex-shrink-0 w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#25D366]/15 border border-[#25D366]/30 flex items-center justify-center text-[#25D366] group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(37,211,102,0.3)]">
-                  <WhatsAppIcon className="w-4 h-4 sm:w-5 sm:h-5 text-[#25D366]" />
-                </div>
-                <div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-[#86868b] block">
-                      WhatsApp Direct
-                    </span>
-                    <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-[9px] font-semibold bg-[#25D366]/20 text-[#25D366] border border-[#25D366]/30">
-                      Online
-                    </span>
-                  </div>
-                  <p className="text-xs sm:text-base font-semibold tracking-tight text-white group-hover:text-[#25D366] transition-colors mt-0.5">
-                    {siteConfig.contact.whatsapp}
-                  </p>
-                  <p className="text-[10px] sm:text-xs text-[#86868b] mt-0.5">
-                    Direct conversation with predefined specification &bull; 24/7
-                  </p>
-                </div>
-              </a>
-
               <a
                 href={`mailto:${siteConfig.contact.email}`}
                 className="ios-glass-card group flex items-start gap-3 sm:gap-4 p-3.5 sm:p-6 rounded-xl sm:rounded-[28px]"

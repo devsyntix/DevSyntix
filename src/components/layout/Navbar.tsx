@@ -3,8 +3,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
 import BrandLogo from "@/components/ui/BrandLogo";
-import { WhatsAppIcon } from "@/components/ui/SocialIcons";
-import { getWhatsAppUrl } from "@/config/site";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -203,7 +201,7 @@ export default function Navbar() {
             })}
           </div>
 
-          <div className="pt-4 border-t border-white/10 flex flex-col gap-2.5">
+          <div className="pt-4 border-t border-white/10">
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, "#contact")}
@@ -211,16 +209,6 @@ export default function Navbar() {
             >
               <Sparkles className="w-4 h-4 text-[#29d8ff]" />
               <span>Let&apos;s Talk</span>
-            </a>
-
-            <a
-              href={getWhatsAppUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ios-btn flex items-center justify-center gap-2 w-full py-3 px-5 rounded-2xl font-semibold text-xs text-white bg-[#25D366]/15 border border-[#25D366]/40 hover:bg-[#25D366]/25 transition-all shadow-[0_4px_16px_rgba(37,211,102,0.2)]"
-            >
-              <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
-              <span>Chat on WhatsApp</span>
             </a>
           </div>
         </div>
