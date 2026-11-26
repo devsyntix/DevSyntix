@@ -17,9 +17,9 @@ import {
 
 export const siteConfig = {
   name: "DevSyntix",
-  tagline: "Building Digital Experiences. Engineering Tomorrow.",
+  tagline: "Custom software engineered for production scale",
   description:
-    "We craft premium digital solutions that transform ideas into powerful, scalable, and beautifully designed software products. From concept to deployment, we engineer the future.",
+    "DevSyntix designs and builds custom software, web applications, mobile apps, and multi-tenant SaaS platforms from architecture through deployment.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://devsyntix.com",
 
   contact: {
@@ -28,12 +28,12 @@ export const siteConfig = {
     whatsapp: "+91 70665 44055",
     whatsappNumber: "917066544055",
     defaultWhatsAppMessage:
-      "Hello DevSyntix! I visited your website and would like to discuss a project with your team.",
+      "Hello DevSyntix, I visited your website and would like to discuss a software project.",
   },
 
   social: {
     whatsapp:
-      "https://wa.me/917066544055?text=Hello%20DevSyntix!%20I%20visited%20your%20website%20and%20would%20like%20to%20discuss%20a%20project%20with%20your%20team.",
+      "https://wa.me/917066544055?text=Hello%20DevSyntix%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20discuss%20a%20software%20project.",
     instagram: "https://www.instagram.com/devsyntix_/",
     facebook: "https://www.facebook.com/profile.php?id=61596414960836",
     twitter: "https://x.com/DevSyntix",
@@ -42,7 +42,6 @@ export const siteConfig = {
   },
 
   navLinks: [
-    { label: "Home", href: "#home" },
     { label: "About", href: "#about" },
     { label: "Services", href: "#services" },
     { label: "Technologies", href: "#technologies" },
@@ -53,137 +52,103 @@ export const siteConfig = {
 
   services: [
     {
-      title: "Custom Software Development",
+      title: "Custom software development",
       description:
-        "Tailored software solutions designed to solve your unique business challenges and drive operational efficiency at scale.",
+        "Tailored internal tools and line-of-business software built around your exact workflows and operational requirements.",
       icon: Code2,
     },
     {
-      title: "Web Application Development",
+      title: "Web application development",
       description:
-        "High-performance, responsive web applications built with modern frameworks that deliver exceptional user experiences.",
+        "Responsive React and Next.js web applications built with typed APIs, clean routing, and fast page loads.",
       icon: Globe,
     },
     {
-      title: "SaaS Product Development",
+      title: "SaaS product development",
       description:
-        "End-to-end SaaS product engineering — from architecture and MVP to multi-tenant platforms ready for market launch.",
+        "End-to-end SaaS engineering from initial MVP through multi-tenant data isolation, authentication, and billing.",
       icon: Layers,
     },
     {
-      title: "Mobile Application Development",
+      title: "Mobile application development",
       description:
-        "Native and cross-platform mobile apps crafted for iOS and Android with fluid interfaces and robust performance.",
+        "Native and cross-platform iOS and Android applications backed by shared API contracts and offline-safe state.",
       icon: Smartphone,
     },
     {
-      title: "UI/UX Design",
+      title: "UI/UX design",
       description:
-        "Research-driven design systems and intuitive interfaces that elevate brand identity and maximize user engagement.",
+        "Component systems and clear interaction flows that keep complex product interfaces straightforward to use.",
       icon: Palette,
     },
     {
-      title: "Cloud Solutions & Integration",
+      title: "Cloud solutions & integration",
       description:
-        "Seamless cloud migration, infrastructure optimization, and integration strategies across AWS, GCP, and Azure.",
+        "Infrastructure setup, containerization, and deployment automation across AWS, Azure, and managed cloud hosts.",
       icon: Cloud,
     },
     {
-      title: "AI & Automation",
+      title: "Workflow automation",
       description:
-        "Intelligent automation pipelines and AI-powered features that streamline workflows and unlock actionable insights.",
+        "Automated pipelines, document processing, and LLM integrations that cut repetitive manual work.",
       icon: Bot,
     },
     {
-      title: "API Development & Integration",
+      title: "API development & integration",
       description:
-        "Robust, well-documented RESTful and GraphQL APIs that connect systems and enable seamless data exchange.",
+        "Documented REST and GraphQL interfaces connecting ERPs, payment gateways, CRMs, and third-party services.",
       icon: Plug,
     },
   ],
 
-  technologies: {
-    frontend: [
-      { name: "React", icon: "/tech/react.svg" },
-      { name: "Next.js", icon: "/tech/nextjs.svg" },
-      { name: "TypeScript", icon: "/tech/typescript.svg" },
-      { name: "Tailwind CSS", icon: "/tech/tailwind.svg" },
-      { name: "Vue.js", icon: "/tech/vue.svg" },
-      { name: "Angular", icon: "/tech/angular.svg" },
-    ],
-    backend: [
-      { name: "Node.js", icon: "/tech/nodejs.svg" },
-      { name: "Python", icon: "/tech/python.svg" },
-      { name: "Go", icon: "/tech/go.svg" },
-      { name: "Rust", icon: "/tech/rust.svg" },
-      { name: "Java", icon: "/tech/java.svg" },
-      { name: "GraphQL", icon: "/tech/graphql.svg" },
-    ],
-    database: [
-      { name: "PostgreSQL", icon: "/tech/postgresql.svg" },
-      { name: "MongoDB", icon: "/tech/mongodb.svg" },
-      { name: "Redis", icon: "/tech/redis.svg" },
-      { name: "MySQL", icon: "/tech/mysql.svg" },
-      { name: "Supabase", icon: "/tech/supabase.svg" },
-      { name: "Firebase", icon: "/tech/firebase.svg" },
-    ],
-    cloudDevOps: [
-      { name: "AWS", icon: "/tech/aws.svg" },
-      { name: "Google Cloud", icon: "/tech/gcp.svg" },
-      { name: "Docker", icon: "/tech/docker.svg" },
-      { name: "Kubernetes", icon: "/tech/kubernetes.svg" },
-      { name: "Vercel", icon: "/tech/vercel.svg" },
-      { name: "GitHub Actions", icon: "/tech/github.svg" },
-    ],
-  },
-
   whyChooseUs: [
     {
-      title: "Innovation First",
+      title: "Direct technical clarity",
       description:
-        "We embrace cutting-edge technologies and creative problem-solving to deliver solutions that set you apart from the competition.",
+        "We scope architecture, data models, and milestone deliverables upfront so there are no surprises mid-build.",
       icon: Lightbulb,
     },
     {
-      title: "Scalable Architecture",
+      title: "Clean system architecture",
       description:
-        "Every system we build is designed to grow with your business — handling millions of users without breaking a sweat.",
+        "Modular services, normalized schemas, and typed boundaries designed to evolve cleanly as requirements grow.",
       icon: Building2,
     },
     {
-      title: "Modern Technologies",
+      title: "Proven core stack",
       description:
-        "We leverage the latest frameworks, languages, and tools to ensure your product stays ahead of the technology curve.",
+        "We standardize on Next.js, TypeScript, .NET Core, Python, and PostgreSQL for long-term maintainability.",
       icon: Cpu,
     },
     {
-      title: "User-Centric Design",
+      title: "Readable interfaces",
       description:
-        "Our design philosophy puts users first, creating interfaces that are intuitive, accessible, and delightful to use.",
+        "Interfaces structured around real user tasks with accessible keyboard states and responsive mobile layouts.",
       icon: Users,
     },
     {
-      title: "Reliable Solutions",
+      title: "Tested releases",
       description:
-        "Battle-tested code, comprehensive testing, and robust CI/CD pipelines ensure your product runs flawlessly 24/7.",
+        "Automated builds, strict type checks, and repeatable CI/CD pipelines catch regressions before production.",
       icon: Shield,
     },
     {
-      title: "Performance Driven",
+      title: "Performance budgets",
       description:
-        "Optimized for speed, efficiency, and responsiveness — because every millisecond counts in the digital experience.",
+        "Lean bundles, indexed queries, and caching strategies that keep response times predictable under load.",
       icon: Zap,
     },
   ],
 
   projects: [
     {
-      title: "The Grand Estate — Luxury Real Estate Platform",
+      title: "The Grand Estate",
       description:
-        "A bespoke architectural showcase and digital sales platform engineered for The Grand Estate by DevSyntix Builder. Features high-performance interactive property exploration, responsive luxury typography, immersive visual galleries, and conversion-optimized lead capture for premium luxury villas in North Bangalore.",
+        "Architectural showcase and digital sales platform engineered for The Grand Estate in North Bangalore. Features responsive villa exploration, structured floor-plan presentation, and direct lead capture built with React and Tailwind CSS.",
       image: "/projects/grand-estate.jpg",
-      tags: ["React", "Tailwind CSS", "Vite", "Luxury Real Estate", "Vercel"],
-      category: "Luxury Real Estate Platform",
+      tags: ["React", "Tailwind CSS", "Vite", "Vercel"],
+      category: "Real estate web platform",
+      location: "North Bangalore",
       link: "https://the-grand-estate.vercel.app/#home",
     },
   ],
@@ -192,52 +157,52 @@ export const siteConfig = {
     {
       question: "What services does DevSyntix provide?",
       answer:
-        "DevSyntix provides end-to-end technology solutions, including custom software development, web application development, SaaS product development, API integration, AI-powered solutions, UI/UX design, and cloud-based solutions. We help businesses transform ideas into scalable digital products.",
+        "DevSyntix handles end-to-end custom software development, responsive web applications, multi-tenant SaaS products, mobile apps, API integrations, workflow automation, UI/UX design, and cloud deployment.",
     },
     {
       question: "Do you work with startups and early-stage businesses?",
       answer:
-        "Absolutely! We work with startups, entrepreneurs, and established businesses. Whether you have an initial idea, need an MVP (Minimum Viable Product), or want to scale an existing application, we can help turn your vision into a functional digital solution.",
+        "Yes. We work with founders, startups, and established businesses—whether you are scoping a focused MVP to validate a market or scaling an existing software system.",
     },
     {
       question: "Can you develop custom SaaS products?",
       answer:
-        "Yes! We specialize in building custom SaaS applications tailored to your business requirements. From planning and architecture to development, deployment, and scalability, we help create secure, reliable, and user-friendly software products.",
+        "Yes. We build custom SaaS applications tailored to your domain, covering system architecture, role-based access, tenant isolation, backend APIs, frontend interfaces, and production hosting.",
     },
     {
       question: "Do you provide website maintenance and support?",
       answer:
-        "Yes. We can provide ongoing website maintenance, performance optimization, security updates, bug fixes, and feature enhancements to keep your digital products running smoothly and efficiently.",
+        "Yes. We offer ongoing maintenance covering dependency updates, bug fixes, performance profiling, security patches, and incremental feature work.",
     },
     {
-      question: "How much does software development cost?",
+      question: "How is software development priced?",
       answer:
-        "The cost depends on project complexity, features, technology requirements, development time, and overall scope. We follow a project-based approach and provide customized quotations after understanding your requirements.\n\nContact us for a project estimate.",
+        "Pricing depends on project scope, technical complexity, integrations, and timeline. Once we review your requirements, we provide a transparent milestone estimate before writing code.",
     },
     {
-      question: "Do you offer ongoing technical support?",
+      question: "Do you offer ongoing technical support after launch?",
       answer:
-        "Yes. We offer ongoing technical assistance, troubleshooting, maintenance, updates, and performance improvements. Our goal is to ensure your application remains reliable, secure, and ready to grow with your business.",
+        "Yes. We provide post-launch support, monitoring setup, troubleshooting, and scheduled engineering sprints to keep your system reliable.",
     },
     {
       question: "Which technologies does DevSyntix work with?",
       answer:
-        "We work with modern technologies and frameworks, including React, JavaScript, .NET, ASP.NET Core, SQL Server, cloud platforms, and other tools selected according to project requirements.",
+        "Our primary stack includes React, Next.js, TypeScript, Angular, .NET Core, Node.js, Python, Java, PostgreSQL, SQL Server, MongoDB, Docker, AWS, and Azure.",
     },
     {
       question: "How long does it take to complete a project?",
       answer:
-        "Project timelines depend on the scope, complexity, and required features. A simple website may take a few weeks, while larger applications and SaaS platforms may require several months. We establish a clear development timeline before starting.",
+        "Focused marketing sites or prototypes typically ship within a few weeks, while custom web applications and multi-tenant SaaS platforms span several milestones across a shared delivery schedule.",
     },
     {
-      question: "Can you upgrade or improve an existing website or application?",
+      question: "Can you upgrade or improve an existing application?",
       answer:
-        "Yes. We can help modernize existing applications, improve performance, redesign user interfaces, integrate new features, fix technical issues, and migrate applications to modern technologies.",
+        "Yes. We audit and modernize legacy web apps, refactor slow database queries, redesign dated interfaces, add API integrations, and migrate older codebases to current frameworks.",
     },
     {
       question: "How do I get started with DevSyntix?",
       answer:
-        "Getting started is simple! Contact us through our website with your project details. Our team will review your requirements, discuss your goals, and suggest an appropriate development approach.",
+        "Share your project requirements using the contact form below or message us directly on WhatsApp. Our engineering team will review the scope and follow up to schedule a technical call.",
     },
   ],
 } as const;
@@ -248,4 +213,3 @@ export function getWhatsAppUrl(message?: string): string {
   const text = message?.trim() || siteConfig.contact.defaultWhatsAppMessage;
   return `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(text)}`;
 }
-

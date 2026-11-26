@@ -12,25 +12,25 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <ScrollReveal direction="up">
+      <ScrollReveal>
         <About />
       </ScrollReveal>
-      <ScrollReveal direction="up" delay={50}>
+      <ScrollReveal>
         <Services />
       </ScrollReveal>
-      <ScrollReveal direction="up" delay={50}>
+      <ScrollReveal>
         <WhyChooseUs />
       </ScrollReveal>
-      <ScrollReveal direction="up" delay={50}>
+      <ScrollReveal>
         <TechStack />
       </ScrollReveal>
-      <ScrollReveal direction="up" delay={50}>
+      <ScrollReveal>
         <Projects />
       </ScrollReveal>
-      <ScrollReveal direction="up" delay={50}>
+      <ScrollReveal>
         <FAQ />
       </ScrollReveal>
-      <ScrollReveal direction="up" delay={50}>
+      <ScrollReveal>
         <Contact />
       </ScrollReveal>
     </>

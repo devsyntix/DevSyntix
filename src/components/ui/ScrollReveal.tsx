@@ -6,16 +6,12 @@ interface ScrollRevealProps {
   children: ReactNode;
   className?: string;
   delay?: number;
-  direction?: "up" | "down" | "none";
-  once?: boolean;
 }
 
 export default function ScrollReveal({
   children,
   className = "",
   delay = 0,
-  direction = "up",
-  once = false,
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -28,40 +24,26 @@ export default function ScrollReveal({
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          if (once) {
-            observer.unobserve(el);
-          }
-        } else if (!once) {
-          // Re-triggers when scrolling past or back up
-          setIsVisible(false);
+          observer.unobserve(el);
         }
       },
       {
-        threshold: 0.1,
-        rootMargin: "0px 0px -40px 0px",
+        threshold: 0.06,
+        rootMargin: "0px 0px -24px 0px",
       }
     );
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [once]);
-
-  const getTransform = () => {
-    if (isVisible) return "translate3d(0, 0, 0) scale(1)";
-    if (direction === "up") return "translate3d(0, 24px, 0) scale(0.985)";
-    if (direction === "down") return "translate3d(0, -24px, 0) scale(0.985)";
-    return "scale(0.985)";
-  };
+  }, []);
 
   return (
     <div
       ref={ref}
       style={{
-        transform: getTransform(),
+        transform: isVisible ? "translate3d(0, 0, 0)" : "translate3d(0, 8px, 0)",
         opacity: isVisible ? 1 : 0,
-        filter: isVisible ? "blur(0px)" : "blur(4px)",
-        transition: `opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, filter 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms`,
-        willChange: "transform, opacity, filter",
+        transition: `opacity 350ms cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms, transform 350ms cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms`,
       }}
       className={className}
     >
