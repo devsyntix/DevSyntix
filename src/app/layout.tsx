@@ -1,23 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import CustomCursor from "@/components/ui/CustomCursor";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import JsonLd from "@/components/seo/JsonLd";
+import ScrollProgress from "@/components/ui/ScrollProgress";
 import ScrollControls from "@/components/ui/ScrollControls";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 
-const geistSans = Geist({
-  variable: "--font-sans-face",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-mono-face",
-  subsets: ["latin"],
-  display: "swap",
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 const siteUrl =
@@ -25,7 +22,7 @@ const siteUrl =
   "https://devsyntix.com";
 
 export const viewport: Viewport = {
-  themeColor: "#0b0d14",
+  themeColor: "#000000",
   colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
@@ -133,10 +130,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} scroll-smooth dark`}
+      className={`${inter.variable} scroll-smooth dark`}
+      style={{
+        fontFamily:
+          '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", var(--font-inter), system-ui, sans-serif',
+      }}
     >
-      <body className="min-h-screen bg-[#0b0d14] text-[#eef0f5] antialiased flex flex-col font-sans">
+      <body className="min-h-screen bg-black text-[#f5f5f7] antialiased select-none flex flex-col font-sans">
+        <ScrollProgress />
         <JsonLd />
+        <CustomCursor />
         <SmoothScroll>
           <Navbar />
           <main className="flex-1">{children}</main>

@@ -21,12 +21,12 @@ const quickLinks = [
 ];
 
 const services = [
-  { label: "Custom software development", href: "#services" },
-  { label: "Web application development", href: "#services" },
-  { label: "SaaS product development", href: "#services" },
-  { label: "Mobile application development", href: "#services" },
-  { label: "Cloud solutions & integration", href: "#services" },
-  { label: "Workflow automation", href: "#services" },
+  { label: "Custom Software Development", href: "#services" },
+  { label: "Web Application Development", href: "#services" },
+  { label: "SaaS Product Development", href: "#services" },
+  { label: "Mobile Application Development", href: "#services" },
+  { label: "Cloud Solutions & Integration", href: "#services" },
+  { label: "AI & Automation", href: "#services" },
 ];
 
 export default function Footer() {
@@ -49,7 +49,7 @@ export default function Footer() {
       href: siteConfig.social.facebook,
     },
     {
-      name: "X",
+      name: "X (Twitter)",
       icon: XTwitterIcon,
       href: siteConfig.social.twitter,
     },
@@ -70,25 +70,31 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#07080d] border-t border-[#eef0f5]/[0.08] text-[#7a8296]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-16 pb-16 sm:pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 pb-12 border-b border-[#eef0f5]/[0.08]">
-          {/* Brand Info (4 cols) */}
-          <div className="lg:col-span-4 space-y-5">
-            <a
-              href="#home"
-              className="inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4da3ff] rounded-[6px]"
-            >
-              <BrandLogo size="md" />
+    <footer className="relative bg-black border-t border-white/[0.08] overflow-hidden text-[#86868b]">
+      {/* Subtle Apple ambient glow */}
+      <div
+        className="pointer-events-none absolute -top-40 left-1/3 h-72 w-72 rounded-full bg-[#0071e3]/10 blur-[140px]"
+        aria-hidden="true"
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-10 sm:pt-20 pb-8 sm:pb-12 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 pb-10 sm:pb-16 border-b border-white/[0.08]">
+          {/* Brand Info (5 cols) */}
+          <div className="lg:col-span-5 space-y-4 sm:space-y-6">
+            <a href="#home" className="inline-block">
+              <BrandLogo size="lg" />
             </a>
-            <p className="text-[14px] leading-[1.6] max-w-xs text-[#a3a9b8]">
-              DevSyntix designs and builds custom software, web applications, mobile apps, and multi-tenant SaaS platforms.
+            <p className="text-xs sm:text-sm leading-relaxed max-w-sm text-[#86868b] tracking-tight">
+              DevSyntix is a premier technology-driven software engineering and
+              SaaS solutions enterprise. We build scalable digital products,
+              intelligent automation systems, and high-impact software for the next
+              decade.
             </p>
 
-            <div>
-              <p className="text-[12px] font-medium text-[#7a8296] mb-3">
-                Social
-              </p>
+            <div className="pt-1 sm:pt-2">
+              <span className="block text-[11px] sm:text-xs uppercase tracking-wider text-white/50 font-semibold mb-2 sm:mb-3">
+                Social Ecosystem
+              </span>
               <div className="flex items-center gap-2">
                 {socialList.map((social) => {
                   const Icon = social.icon;
@@ -99,9 +105,9 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`DevSyntix on ${social.name}`}
-                      className="btn-press w-9 h-9 rounded-[8px] bg-[#11141c] border border-[#eef0f5]/[0.08] flex items-center justify-center text-[#7a8296] hover:text-[#eef0f5] hover:border-[#eef0f5]/[0.16] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4da3ff]"
+                      className="ios-btn w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center text-[#86868b] hover:text-white hover:border-white/30 hover:bg-white/[0.08] transition-all"
                     >
-                      <Icon className="w-4 h-4" />
+                      <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </a>
                   );
                 })}
@@ -109,100 +115,103 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Navigation (2 cols) */}
+          {/* Quick Links & Services side-by-side on Mobile */}
+          <div className="grid grid-cols-2 gap-6 lg:contents">
+            {/* Quick Links (2 cols) */}
+            <div className="lg:col-span-2">
+              <h4 className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/90 mb-3 sm:mb-5">
+                Navigation
+              </h4>
+              <ul className="space-y-2 sm:space-y-3">
+                {quickLinks.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="text-xs sm:text-sm text-[#86868b] hover:text-white transition-colors duration-200 tracking-tight"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Services (3 cols) */}
+            <div className="lg:col-span-3">
+              <h4 className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/90 mb-3 sm:mb-5">
+                Core Capabilities
+              </h4>
+              <ul className="space-y-2 sm:space-y-3">
+                {services.map((service) => (
+                  <li key={service.label}>
+                    <a
+                      href={service.href}
+                      className="text-xs sm:text-sm text-[#86868b] hover:text-white transition-colors duration-200 block truncate tracking-tight"
+                    >
+                      {service.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Contact (2 cols) */}
           <div className="lg:col-span-2">
-            <h4 className="text-[13px] font-medium text-[#eef0f5] mb-4">
-              Navigation
-            </h4>
-            <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-[14px] text-[#a3a9b8] hover:text-[#eef0f5] transition-colors duration-150 block leading-[24px]"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Capabilities (3 cols) */}
-          <div className="lg:col-span-3">
-            <h4 className="text-[13px] font-medium text-[#eef0f5] mb-4">
-              Capabilities
-            </h4>
-            <ul className="space-y-2">
-              {services.map((service) => (
-                <li key={service.label}>
-                  <a
-                    href={service.href}
-                    className="text-[14px] text-[#a3a9b8] hover:text-[#eef0f5] transition-colors duration-150 block truncate leading-[24px]"
-                  >
-                    {service.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Connect (3 cols) */}
-          <div className="lg:col-span-3">
-            <h4 className="text-[13px] font-medium text-[#eef0f5] mb-4">
+            <h4 className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/90 mb-3 sm:mb-5">
               Connect
             </h4>
-            <div className="space-y-4 text-[14px]">
+            <div className="space-y-3 sm:space-y-4 text-xs sm:text-sm text-[#86868b] tracking-tight">
               <div>
-                <span className="text-[12px] text-[#7a8296] block mb-0.5">
-                  Email
-                </span>
+                <span className="text-[10px] sm:text-xs text-white/40 block">Email</span>
                 <a
                   href={`mailto:${siteConfig.contact.email}`}
-                  className="text-[#eef0f5] hover:text-[#4da3ff] transition-colors duration-150 truncate block"
+                  className="text-white hover:text-[#29d8ff] transition-colors truncate block"
                 >
                   {siteConfig.contact.email}
                 </a>
               </div>
               <div>
-                <span className="text-[12px] text-[#7a8296] block mb-0.5">
-                  Phone
-                </span>
-                <a
-                  href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, "")}`}
-                  className="text-[#eef0f5] hover:text-[#4da3ff] transition-colors duration-150 font-mono tabular-nums"
-                >
-                  {siteConfig.contact.phone}
-                </a>
-              </div>
-              <div>
-                <span className="text-[12px] text-[#7a8296] block mb-0.5">
-                  WhatsApp
-                </span>
+                <span className="text-[10px] sm:text-xs text-white/40 block">WhatsApp</span>
                 <a
                   href={getWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#eef0f5] hover:text-[#4cc38a] transition-colors duration-150 inline-flex items-center gap-2 font-mono tabular-nums"
+                  className="text-white hover:text-[#25D366] transition-colors flex items-center gap-1.5"
                 >
-                  <WhatsAppIcon className="w-4 h-4 flex-shrink-0" />
+                  <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366]" />
                   <span>{siteConfig.contact.whatsapp}</span>
+                </a>
+              </div>
+              <div>
+                <span className="text-[10px] sm:text-xs text-white/40 block">Direct</span>
+                <a
+                  href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, "")}`}
+                  className="text-white hover:text-[#29d8ff] transition-colors"
+                >
+                  {siteConfig.contact.phone}
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Copyright Row with right clearance for floating WhatsApp button */}
-        <div className="pt-8 pr-16 sm:pr-20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[13px] text-[#7a8296]">
-          <p>&copy; {currentYear} DevSyntix. All rights reserved.</p>
-          <div className="flex items-center gap-6">
-            <a href="#contact" className="hover:text-[#eef0f5] transition-colors duration-150">
+        {/* Copyright Row */}
+        <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-[11px] sm:text-xs text-[#86868b]">
+          <p>&copy; {currentYear} DevSyntix. All Rights Reserved.</p>
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6">
+            <a href="#" className="hover:text-white transition-colors">
               Privacy
             </a>
-            <a href="#contact" className="hover:text-[#eef0f5] transition-colors duration-150">
+            <span className="text-white/10">&bull;</span>
+            <a href="#" className="hover:text-white transition-colors">
               Terms
             </a>
+            <span className="text-white/10">&bull;</span>
+            <span className="inline-flex items-center gap-1.5 text-[#29d8ff] font-medium tracking-tight">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#30d158] shadow-[0_0_6px_#30d158]" />
+              <span>Software Development &bull; SaaS Solutions</span>
+            </span>
           </div>
         </div>
       </div>
